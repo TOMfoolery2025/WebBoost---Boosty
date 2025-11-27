@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Boost Insights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="flex items-center justify-between px-8 py-4 bg-white border-b border-gray-100">
+        <div class="flex items-center space-x-2">
+            <div class="w-6 h-6 bg-purple-600 rounded-full"></div>
+            <span class="font-semibold text-lg">Blog Boost Insights</span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="#" class="text-sm font-medium text-gray-600 hover:text-gray-900">Preview</a>
+            <button class="bg-gray-900 text-white px-4 py-2 rounded-md text-sm font-medium">Publish</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="max-w-5xl mx-auto px-4 pt-20 pb-16 text-center">
+        <h1 class="text-5xl font-bold mb-4">
+            Elevate Your <span class="text-purple-400">Medium Blog</span>
+        </h1>
+        <p class="text-gray-600 text-lg mb-16 max-w-2xl mx-auto">
+            Get AI-powered insights to improve your content quality, SEO, and visual design
+        </p>
+
+        <!-- Feature Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 text-left">
+            <!-- Card 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mb-4 text-purple-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-lg mb-2">Content Quality</h3>
+                <p class="text-sm text-gray-500">Analyze readability, grammar, and structure to ensure your content
+                    resonates with readers</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mb-4 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-lg mb-2">SEO Optimization</h3>
+                <p class="text-sm text-gray-500">Optimize keywords, meta descriptions, and headings to boost your search
+                    rankings</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center mb-4 text-pink-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-lg mb-2">Visual Design</h3>
+                <p class="text-sm text-gray-500">Evaluate layout, color scheme, and mobile responsiveness for better
+                    user experience</p>
+            </div>
+        </div>
+
+        <!-- Input Section -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 max-w-2xl mx-auto mb-20">
+            <h2 class="font-semibold text-xl mb-4 text-left">Analyze Your Blog</h2>
+            <p class="text-sm text-gray-500 mb-6 text-left">Enter your blog URL or Medium Profile (e.g.,
+                https://your-awesome-blog.com)</p>
+
+            <form action="/analyze/" method="post" class="flex gap-4">
+                {% csrf_token %}
+                <input type="url" name="url" placeholder="https://your-awesome-blog.com" required
+                    class="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500">
+                <button type="submit"
+                    class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-lg text-sm font-medium transition-colors flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    Analyze Now
+                </button>
+            </form>
+            {% if error %}
+            <p class="text-red-500 text-sm mt-4 text-left">{{ error }}</p>
+            {% endif %}
+        </div>
+
+        <!-- Pricing Section -->
+        <h2 class="text-2xl font-bold mb-10">Simple Pricing</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-20">
+            <!-- Free Plan -->
+            <div class="bg-white p-8 rounded-xl border border-gray-200 text-left">
+                <h3 class="font-bold text-lg mb-2">Free Preview</h3>
+                <p class="text-sm text-gray-500 mb-6">Perfect for getting started</p>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center text-sm text-gray-600"><span class="text-green-500 mr-2">✓</span>
+                        Unlimited blog scans</li>
+                    <li class="flex items-center text-sm text-gray-600"><span class="text-green-500 mr-2">✓</span>
+                        Overall scores preview</li>
+                    <li class="flex items-center text-sm text-gray-600"><span class="text-green-500 mr-2">✓</span> Basic
+                        recommendations</li>
+                </ul>
+                <div class="text-2xl font-bold mb-6">$0</div>
+                <button class="w-full border border-gray-200 py-2 rounded-lg text-sm font-medium hover:bg-gray-50">Get
+                    Started Free</button>
+            </div>
+            <!-- Premium Plan -->
+            <div
+                class="bg-white p-8 rounded-xl border border-purple-500 ring-1 ring-purple-500 text-left relative overflow-hidden">
+                <h3 class="font-bold text-lg mb-2">Premium</h3>
+                <p class="text-sm text-gray-500 mb-6">For serious bloggers</p>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center text-sm text-gray-600"><span class="text-green-500 mr-2">✓</span>
+                        Everything in Free</li>
+                    <li class="flex items-center text-sm text-gray-600"><span class="text-green-500 mr-2">✓</span>
+                        Detailed breakdowns & charts</li>
+                    <li class="flex items-center text-sm text-gray-600"><span class="text-green-500 mr-2">✓</span>
+                        Priority recommendations</li>
+                    <li class="flex items-center text-sm text-gray-600"><span class="text-green-500 mr-2">✓</span>
+                        Analysis history</li>
+                </ul>
+                <div class="text-2xl font-bold mb-6">$9.99<span class="text-sm font-normal text-gray-500">/month</span>
+                </div>
+                <button
+                    class="w-full bg-purple-500 text-white py-2 rounded-lg text-sm font-medium hover:bg-purple-600">Upgrade
+                    to Premium</button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-center py-8 text-xs text-gray-400 border-t border-gray-100">
+        <p>By using this service, you agree to our Terms of Service and Privacy Policy</p>
+        <p class="mt-2">© 2025 Blog Analyzer. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
