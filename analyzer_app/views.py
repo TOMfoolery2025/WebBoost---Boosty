@@ -19,8 +19,18 @@ def analyze(request):
         return render(request, 'analyzer_app/index.html', {'error': 'Please provide a URL.'})
     
     try:
-        html_content = fetch_page(url)
-        analysis_data = analyze_page(html_content, url=url)
+        # Check if we have cached analysis results for this URL
+        cached_data_key = f'analysis_data_{url}'
+        
+        if cached_data_key in request.session:
+            # Use cached analysis results to prevent score changes
+            analysis_data = request.session[cached_data_key]
+        else:
+            # Perform new analysis and cache it
+            html_content = fetch_page(url)
+            analysis_data = analyze_page(html_content, url=url)
+            request.session[cached_data_key] = analysis_data
+        
         is_premium = request.session.get('is_premium', False)
         return render(request, 'analyzer_app/result.html', {
             'data': analysis_data, 
