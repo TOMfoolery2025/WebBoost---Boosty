@@ -7,8 +7,7 @@ A powerful Django-based blog analysis tool that provides actionable insights on 
 ### 🎥 Video Demo
 Watch a quick walkthrough of Boosty in action:
 
-
-Uploading Screen Recording 2025-11-29 at 07.11.15.mov…
+https://youtu.be/4VfoYLZEkbM
 
 
 ### 📊 Presentation
@@ -172,13 +171,6 @@ Contributions are welcome! Please feel free to submit pull requests or open issu
 
 MIT License - feel free to use this project for personal or commercial purposes.
 
-## 👤 Author
-
-- GitHub: [@EKupra](https://github.com/EKupra)
-- Project Repository: [Boosty](https://github.com/EKupra/boosty)
-
-
----
 
 **Made with ❤️ for bloggers and content creators worldwide**
 
