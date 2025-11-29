@@ -457,7 +457,8 @@
             <!-- Engagement -->
             <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 relative overflow-hidden">
                 {% if not is_premium %}
-                <div class="absolute inset-0 bg-white/80 rounded-xl flex items-center justify-center z-10">
+                <div
+                    class="absolute inset-0 bg-white/90 backdrop-blur-md rounded-xl flex items-center justify-center z-10">
                     <a href="/register/"
                         class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-md text-sm font-medium hover:opacity-90 transition-opacity shadow-lg">
                         Unlock Full Report
@@ -576,7 +577,7 @@
             {% else %}
             <!-- Blurred Recommendation (Premium Gate) -->
             <div class="relative">
-                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm opacity-50 blur-sm select-none">
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm opacity-40 blur-md select-none">
                     <div class="space-y-4">
                         <div class="flex items-start gap-3">
                             <span class="mt-1 px-2 py-0.5 rounded text-xs font-bold text-white uppercase bg-gray-400">
